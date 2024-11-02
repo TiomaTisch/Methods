@@ -64,8 +64,11 @@ public class Main {
         System.out.println("_______Задание 3________");
 
         int deliveryDistance = Integer.parseInt(System.console().readLine("Specify the approximate distance from you to the office: "));
-        System.out.println("Потребуется дней: " + calculationDeliveryDay(deliveryDistance));
-
+        if(calculationDeliveryDay(deliveryDistance) <= 3) {
+            System.out.println("Потребуется дней: " + calculationDeliveryDay(deliveryDistance));
+        }else {
+            System.out.println("Доставки нет");
+        }
     }
 
 }
