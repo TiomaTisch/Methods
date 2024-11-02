@@ -1,5 +1,4 @@
 import java.time.LocalDate;
-import java.util.Locale;
 import java.util.Random;
 
 public class Main {
@@ -35,7 +34,7 @@ public class Main {
         }
     }
 
-    public  static  void calculationDeliveryDay (int deliveryDistance){
+    public  static byte calculationDeliveryDay (int deliveryDistance){
         byte deliveryDay = 1;
         if (deliveryDistance > 20) {
             deliveryDay++;
@@ -46,12 +45,7 @@ public class Main {
         if (deliveryDistance > 100) {
             deliveryDay++;
         }
-        if ( deliveryDay <= 3){
-            System.out.println("Потребуется дней: " + deliveryDay);
-        }
-        else {
-            System.out.println("Доставки нет");
-        }
+        return deliveryDay;
     }
 
     public static void main(String[] args) {
@@ -69,7 +63,8 @@ public class Main {
 
         System.out.println("_______Задание 3________");
 
-        calculationDeliveryDay(Integer.parseInt(System.console().readLine("Specify the approximate distance from you to the office: ")));
+        int deliveryDistance = Integer.parseInt(System.console().readLine("Specify the approximate distance from you to the office: "));
+        System.out.println("Потребуется дней: " + calculationDeliveryDay(deliveryDistance));
 
     }
 }
